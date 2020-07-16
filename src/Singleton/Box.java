@@ -2,21 +2,30 @@ package Singleton;
 
 public class Box {
       
-	private static Box value = new Box();
-	
-	private Box() {}
+	 private Object value;
 
-	public static Box getValue() {
-		return value;
-	}
+	    private Box (){}
 
-	public static void setValue(Box value) {
-		Box.value = value;
-	}
+	    public Object getValue() {
+	        return value;
+	    }
 
-	@Override
-	public String toString() {
-		return "Box =["+ value +"]";
-	}
+	    public void setValue(Object value) {
+	        this.value = value;
+	    }
+
+	    @Override
+	    public String toString() {
+	        return "value = " + value ;
+	    }
+
+	    private static class Singlenton {
+	        private static final Box INSTANCE = new Box();
+
+	    }
+
+	    public static Box getInstance(){
+	        return  Singlenton.INSTANCE;
+	    }
     
 }
