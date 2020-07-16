@@ -2,7 +2,7 @@ package Singleton;
 
 public class Box {
       
-	 private Object value;
+	    private Object value;
 
 	    private Box (){}
 
